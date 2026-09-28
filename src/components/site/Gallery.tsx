@@ -23,6 +23,7 @@ const images = [
 
 export function Gallery() {
   const [active, setActive] = useState<number | null>(null);
+  const current = active === null ? undefined : images[active];
 
   return (
     <>
@@ -48,12 +49,12 @@ export function Gallery() {
 
       <Dialog open={active !== null} onOpenChange={(o) => !o && setActive(null)}>
         <DialogContent className="max-w-4xl border-none bg-transparent p-0 shadow-none">
-          {active !== null && (
+          {current && (
             <>
-              <DialogTitle className="sr-only">{images[active].alt}</DialogTitle>
+              <DialogTitle className="sr-only">{current.alt}</DialogTitle>
               <img
-                src={images[active].src}
-                alt={images[active].alt}
+                src={current.src}
+                alt={current.alt}
                 className="max-h-[80svh] w-full rounded-lg object-contain"
               />
             </>

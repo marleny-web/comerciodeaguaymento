@@ -45,6 +45,8 @@ export function HeroSlider() {
   const [index, setIndex] = useState(0);
   const count = slides.length;
 
+  const active = slides[index];
+
   const go = useCallback((n: number) => setIndex((i) => (i + n + count) % count), [count]);
 
   useEffect(() => {
@@ -84,24 +86,26 @@ export function HeroSlider() {
       ))}
 
       <div className="relative mx-auto flex h-full max-w-7xl items-center px-5 lg:px-8">
+        {active && (
         <div key={index} className="max-w-2xl animate-in fade-in slide-in-from-bottom-6 duration-700">
           <p className="eyebrow mb-4 text-gold-soft">Aguaymanto peruano</p>
           <h1 className="text-4xl leading-[1.08] text-balance text-primary-foreground md:text-5xl lg:text-6xl">
-            {slides[index].title}
+            {active.title}
           </h1>
-          {slides[index].text && (
+          {active.text && (
             <p className="mt-6 max-w-xl text-base leading-relaxed text-primary-foreground/85 md:text-lg">
-              {slides[index].text}
+              {active.text}
             </p>
           )}
           <div className="mt-9 flex flex-wrap gap-3">
-            {slides[index].actions.map((a) => (
+            {active.actions.map((a) => (
               <Button key={a.label} asChild variant={a.variant} size="xl">
                 <Link to={a.to}>{a.label}</Link>
               </Button>
             ))}
           </div>
         </div>
+        )}
       </div>
 
       <div className="absolute inset-x-0 bottom-7 z-10">

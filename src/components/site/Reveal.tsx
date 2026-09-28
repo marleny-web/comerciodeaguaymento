@@ -26,10 +26,15 @@ export function Reveal({
           observer.disconnect();
         }
       },
-      { threshold: 0.12, rootMargin: "0px 0px -40px 0px" },
+      { threshold: 0.02, rootMargin: "0px 0px -40px 0px" },
     );
     observer.observe(el);
-    return () => observer.disconnect();
+    // Salvaguarda: si el observador no dispara, el contenido igual aparece.
+    const fallback = window.setTimeout(() => setShown(true), 1200);
+    return () => {
+      observer.disconnect();
+      window.clearTimeout(fallback);
+    };
   }, []);
 
   return (

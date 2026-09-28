@@ -54,9 +54,7 @@ export function ProductCard({ product }: { product: Product }) {
           </ul>
         )}
         <Button asChild variant="leaf" size="lg" className="mt-6 w-full">
-          <Link to="/contacto" search={{ producto: product.slug }}>
-            {product.cta}
-          </Link>
+          <Link to="/contacto">{product.cta}</Link>
         </Button>
       </div>
     </article>

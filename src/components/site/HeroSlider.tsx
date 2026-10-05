@@ -165,6 +165,14 @@ export function HeroSlider() {
           </div>
         </div>
       </div>
+
+      {videoOpen && (
+        <VideoModal
+          videoId={YOUTUBE_VIDEO_ID}
+          title="Propiedades y beneficios del aguaymanto"
+          onClose={() => setVideoOpen(false)}
+        />
+      )}
     </section>
   );
 }

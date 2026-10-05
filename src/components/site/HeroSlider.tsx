@@ -1,11 +1,14 @@
 import { useCallback, useEffect, useState } from "react";
 import { Link } from "@tanstack/react-router";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { ChevronLeft, ChevronRight, PlayCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import { VideoModal } from "@/components/site/VideoModal";
 import hero1 from "@/assets/hero-1.jpg";
 import hero2 from "@/assets/hero-2.jpg";
 import hero3 from "@/assets/hero-3.jpg";
+
+const YOUTUBE_VIDEO_ID = "qkLGWcp9WUs"; // Propiedades y beneficios del aguaymanto
 
 type Slide = {
   image: string;
@@ -43,6 +46,7 @@ const slides: Slide[] = [
 
 export function HeroSlider() {
   const [index, setIndex] = useState(0);
+  const [videoOpen, setVideoOpen] = useState(false);
   const count = slides.length;
 
   const active = slides[index];
@@ -50,9 +54,10 @@ export function HeroSlider() {
   const go = useCallback((n: number) => setIndex((i) => (i + n + count) % count), [count]);
 
   useEffect(() => {
+    if (videoOpen) return; // Pausa el carrusel mientras se reproduce el video
     const id = window.setInterval(() => setIndex((i) => (i + 1) % count), 5000);
     return () => window.clearInterval(id);
-  }, [count]);
+  }, [count, videoOpen]);
 
   return (
     <section
@@ -97,13 +102,25 @@ export function HeroSlider() {
               {active.text}
             </p>
           )}
-          <div className="mt-9 flex flex-wrap gap-3">
+          <div className="mt-9 flex flex-wrap items-center gap-3">
             {active.actions.map((a) => (
               <Button key={a.label} asChild variant={a.variant} size="xl">
                 <Link to={a.to}>{a.label}</Link>
               </Button>
             ))}
           </div>
+          <button
+            type="button"
+            onClick={() => setVideoOpen(true)}
+            className="group mt-5 inline-flex items-center gap-3 text-primary-foreground transition-colors hover:text-gold-soft"
+          >
+            <span className="flex size-11 items-center justify-center rounded-full border border-primary-foreground/45 transition-colors group-hover:border-gold-soft">
+              <PlayCircle className="size-6" aria-hidden="true" />
+            </span>
+            <span className="text-sm font-semibold uppercase tracking-wide md:text-base">
+              Ver video sobre el aguaymanto
+            </span>
+          </button>
         </div>
         )}
       </div>
@@ -148,6 +165,14 @@ export function HeroSlider() {
           </div>
         </div>
       </div>
+
+      {videoOpen && (
+        <VideoModal
+          videoId={YOUTUBE_VIDEO_ID}
+          title="Propiedades y beneficios del aguaymanto"
+          onClose={() => setVideoOpen(false)}
+        />
+      )}
     </section>
   );
 }

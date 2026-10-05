@@ -1,11 +1,14 @@
 import { useCallback, useEffect, useState } from "react";
 import { Link } from "@tanstack/react-router";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { ChevronLeft, ChevronRight, PlayCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import { VideoModal } from "@/components/site/VideoModal";
 import hero1 from "@/assets/hero-1.jpg";
 import hero2 from "@/assets/hero-2.jpg";
 import hero3 from "@/assets/hero-3.jpg";
+
+const YOUTUBE_VIDEO_ID = "qkLGWcp9WUs"; // Propiedades y beneficios del aguaymanto
 
 type Slide = {
   image: string;

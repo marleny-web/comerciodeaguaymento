@@ -28,32 +28,24 @@ export function VideoModal({ videoId, title, onClose }: VideoModalProps) {
       role="dialog"
       aria-modal="true"
       aria-label={title}
-      className="fixed inset-0 z-[100] flex items-center justify-center bg-background/95 p-4 backdrop-blur-sm sm:p-6"
-      onClick={onClose}
+      className="fixed inset-0 z-[100] bg-black"
     >
-      <div
-        className="relative w-full max-w-5xl"
-        onClick={(e) => e.stopPropagation()}
+      <button
+        ref={closeRef}
+        type="button"
+        onClick={onClose}
+        aria-label="Cerrar video"
+        className="absolute right-4 top-4 z-10 flex size-12 items-center justify-center rounded-full border border-white/50 bg-black/40 text-white transition-colors hover:bg-white/20 sm:right-6 sm:top-6"
       >
-        <button
-          ref={closeRef}
-          type="button"
-          onClick={onClose}
-          aria-label="Cerrar video"
-          className="absolute -top-12 right-0 flex size-11 items-center justify-center rounded-full border border-primary-foreground/40 text-primary-foreground transition-colors hover:bg-primary-foreground/15"
-        >
-          <X className="size-5" />
-        </button>
-        <div className="aspect-video w-full overflow-hidden rounded-xl bg-black shadow-lift">
-          <iframe
-            className="h-full w-full"
-            src={`https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0&modestbranding=1`}
-            title={title}
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowFullScreen
-          />
-        </div>
-      </div>
+        <X className="size-6" />
+      </button>
+      <iframe
+        className="absolute inset-0 h-full w-full border-0"
+        src={`https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0&modestbranding=1`}
+        title={title}
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowFullScreen
+      />
     </div>
   );
 }

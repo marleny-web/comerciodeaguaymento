@@ -54,9 +54,10 @@ export function HeroSlider() {
   const go = useCallback((n: number) => setIndex((i) => (i + n + count) % count), [count]);
 
   useEffect(() => {
+    if (videoOpen) return; // Pausa el carrusel mientras se reproduce el video
     const id = window.setInterval(() => setIndex((i) => (i + 1) % count), 5000);
     return () => window.clearInterval(id);
-  }, [count]);
+  }, [count, videoOpen]);
 
   return (
     <section

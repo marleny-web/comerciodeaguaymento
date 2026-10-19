@@ -42,8 +42,8 @@ function Home() {
         <div className="mx-auto grid max-w-7xl items-center gap-12 px-5 lg:grid-cols-2 lg:gap-16 lg:px-8">
           <Reveal>
             <SectionTitle
-              eyebrow="Sobre nosotros"
-              title="Comprometidos con la calidad del aguaymanto peruano"
+              eyebrow="Sobre la Empresa "
+              title="Comprometidos con la calidad del aguaymanto limatambeño"
               text="Somos una empresa dedicada a la producción y comercialización de aguaymanto, comprometida con ofrecer productos de calidad y construir relaciones comerciales duraderas con nuestros clientes."
             />
             <Button asChild variant="leaf" size="xl" className="mt-8">
@@ -72,9 +72,9 @@ function Home() {
         <div className="mx-auto max-w-7xl px-5 lg:px-8">
           <Reveal>
             <SectionTitle
-              eyebrow="Nuestros productos"
+              eyebrow="Nuestros productos bamdera"
               align="center"
-              title="Aguaymanto seleccionado para cada tipo de cliente"
+              title="Aguaymanto seleccionado para cada necesidad de los peruoños"
               text="Presentaciones pensadas para consumo directo, negocios gastronómicos y distribución comercial."
             />
           </Reveal>

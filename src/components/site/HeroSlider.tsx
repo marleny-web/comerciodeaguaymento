@@ -30,14 +30,14 @@ const slides: Slide[] = [
     ],
   },
   {
-    image: cosecha,
+    image: hero2,
     alt: "Campos de cultivo de aguaymanto en la sierra peruana al atardecer",
     title: "Del campo Limatambeño a nuevos mercados",
     text: "Trabajamos para ofrecer productos agrícolas de calidad, con compromiso, responsabilidad y visión de crecimiento.",
     actions: [{ label: "Conoce nuestra empresa", to: "/quienes-somos", variant: "gold" }],
   },
   {
-    image: fruto,
+    image: hero3,
     alt: "Cosecha manual de aguaymanto en una plantación peruana en el valle de limatambo",
     title: "Natural, versátil y de excelente calidad",
     actions: [{ label: "Ver productos", to: "/productos", variant: "gold" }],

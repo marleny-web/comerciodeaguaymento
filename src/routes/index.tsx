@@ -14,7 +14,7 @@ import { newsPosts } from "@/data/news";
 import { reasons } from "@/data/company";
 import aboutField from "@/assets/about-field.jpg";
 
-const title = "Aguaymanto peruano | Producción, venta y distribución";
+const title = "Aguaymanto peruano | Producción, venta y distribución - Limatambo ";
 const description =
   "Empresa peruana dedicada a la producción, comercialización y venta de aguaymanto fresco. Atendemos clientes particulares, restaurantes, tiendas, distribuidores y pedidos al por mayor.";
 

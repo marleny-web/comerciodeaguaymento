@@ -20,7 +20,7 @@ type Slide = {
 
 const slides: Slide[] = [
   {
-    image: campo ,
+    image: hero1,
     alt: "Aguaymanto fresco peruano con su capacho abierto sobre madera",
     title: "Aguaymanto peruano, calidad que nace en nuestra tierra del  Limatambo",
     text: "Producimos y comercializamos aguaymanto seleccionado, llevando el sabor y la calidad del campo peruano a nuestros clientes.",

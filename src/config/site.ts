@@ -5,9 +5,9 @@
  */
 
 export const site = {
-  name: "[NOMBRE DE LA EMPRESA]",
-  shortName: "AGUAYMANTO PERÚ",
-  tagline: "Calidad y compromiso desde el campo peruano.",
+  name: "Aguaymento Perú",
+  shortName: "AGUAYMENTO PERÚ",
+  tagline: "Producción y venta de aguaymanto peruano fresco y de calidad.",
   description:
     "Producción, comercialización y venta de aguaymanto peruano seleccionado para clientes particulares, restaurantes, tiendas, distribuidores y compradores mayoristas.",
   url: "https://aguaymanto-peru.lovable.app",

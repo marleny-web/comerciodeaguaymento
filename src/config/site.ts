@@ -17,22 +17,22 @@ export const site = {
 export const contact = {
   whatsapp: {
     /** Número en formato internacional, solo dígitos. Ej: 51999999999 */
-    number: "51999999999",
-    display: "[WHATSAPP]",
+    number: "51935292977",
+    display: "+51 935 292 977",
     message:
       "Hola, estoy interesado en sus productos de aguaymanto y quisiera recibir información.",
     prompt: "¿Necesitas información?",
   },
   phone: {
-    display: "[TELÉFONO]",
-    href: "tel:+51999999999",
+    display: "+51 935 292 977",
+    href: "tel:+51935292977",
   },
   email: {
-    display: "[CORREO]",
-    href: "mailto:contacto@example.com",
+    display: "contacto@aguaymundoperu.com",
+    href: "mailto:contacto@aguaymundoperu.com",
   },
-  address: "[DIRECCIÓN], [CIUDAD], Perú",
-  schedule: "[HORARIO DE ATENCIÓN]",
+  address: "Rioja Andenes - Limatanbo - Anta - Cusco, Perú",
+  schedule: "Lunes a Sábado, 8:00 a.m - 6:00 p.m",
 };
 
 export const socials = [
